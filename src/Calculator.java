@@ -9,9 +9,35 @@ public class Calculator {
 		// We give the constructor the argument "System.in" to let 
 		// the object know we want to read from the console
 		Scanner input = new Scanner(System.in);
+
 		System.out.println("Enter an operation (+, -, *, /)...");
 		String operation = input.nextLine();
-		System.out.println("You picked: " + operation);
+		System.out.println("Enter the first number...");
+		int xx = input.nextInt();
+		System.out.println("Enter the second number...");
+		int yy = input.nextInt();
+		Integer result = null;
+		switch (operation) {
+			case "+":
+				result = state.add(xx, yy);
+				break;
+			case "-":
+				result = state.subtract(xx, yy);
+				break;
+			case "*":
+				result = state.multiply(xx, yy);
+				break;
+			case "/":
+				result = state.divide(xx, yy);
+				break;
+			default:
+				System.out.println("Unknown operation \"" + operation + "\"");
+				break;
+		}
+		
+		if (result != null) {
+		  System.out.println("--> " + Integer.toString(result));
+		}
 		
 	}
 	
