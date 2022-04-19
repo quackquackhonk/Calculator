@@ -31,8 +31,6 @@ public class Calculator {
 			case "/":
 				result = state.divide(xx, yy);
 				break;
-			case "^":
-			  result = state.raise(xx, yy);
 			default:
 				System.out.println("Unknown operation \"" + operation + "\"");
 				break;
