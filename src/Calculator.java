@@ -1,5 +1,6 @@
 import java.util.Scanner;
 
+
 public class Calculator {
 	
 	public static void main(String[] args) {
@@ -30,6 +31,8 @@ public class Calculator {
 			case "/":
 				result = state.divide(xx, yy);
 				break;
+			case "^":
+			  result = state.raise(xx, yy);
 			default:
 				System.out.println("Unknown operation \"" + operation + "\"");
 				break;
@@ -61,6 +64,10 @@ class CalculatorState {
 	
 	public int divide(int x, int y) {
 		return x / y;
+	}
+	
+	public int raise(int x, int y) {
+	  return (int) Math.pow(x, y);
 	}
 }
 
